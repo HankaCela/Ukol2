@@ -5,7 +5,7 @@ function justFood(numPeople) {
 }
 
 function yourMama(numPeople) {
-    const pricePerPerson = 2000;
+    const pricePerPerson = 2000; 
     const totalCost = numPeople * pricePerPerson;
     return `Catering od Your Mama pro ${numPeople} lidí za ${totalCost} Kč`;
 }
@@ -23,7 +23,9 @@ function createEvent(eventName, numPeople, cateringFunction) {
 }
 
 
-console.log(justFood(100));      
-console.log(yourMama(100));      
-console.log(flavourHaven(100)); 
-console.log(createEvent("Inaugurace prezidenta", 100, flavourHaven));
+const outputDiv = document.getElementById('output');
+
+
+outputDiv.innerHTML += `<p>${createEvent("Inaugurace prezidenta", 100, flavourHaven)}</p>`;
+outputDiv.innerHTML += `<p>${createEvent("Firemní večírek", 50, yourMama)}</p>`;
+outputDiv.innerHTML += `<p>${createEvent("Svatební hostina", 150, justFood)}</p>`;
